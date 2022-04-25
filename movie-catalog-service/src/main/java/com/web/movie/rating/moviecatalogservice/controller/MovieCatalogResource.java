@@ -32,7 +32,7 @@ public class MovieCatalogResource {
         RatingDto rating = webClientBuilder.build()
                 .get().uri("http://localhost:8083/ratingsdata/{movieID}")
                 .retrieve().bodyToMono(RatingDto.class).block();
-//k
+
 
         List<CatalogItem> catalogItemList = new ArrayList<>();
         for (RatingDto ratingDto : ratingList) {
