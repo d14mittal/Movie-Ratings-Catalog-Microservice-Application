@@ -1,16 +1,16 @@
 package com.web.data.service.ratingsdataservice.dto;
 
+
 import lombok.*;
 
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class RatingDto {
+public class UserRating {
 
-    private String movieID;
-    private int rating;
-
+    private List<RatingDto> ratingDtoList;
 }
