@@ -19,6 +19,8 @@ import java.util.List;
 @RequestMapping(path = "/catalog")
 public class MovieCatalogResource {
 
+//    LogManager log = new LogManager(MovieCatalogResource.class);
+
     @Autowired
     private WebClient.Builder webClientBuilder;
 
@@ -27,7 +29,7 @@ public class MovieCatalogResource {
     public List<CatalogItem> getCatalog(@PathVariable("userID") String userID) {
 
         Mono<UserRating> ratingList = webClientBuilder.build()
-                .get().uri("http://localhost:8083/ratingsdata/users/" + userID, UserRating.class)
+                .get().uri("http://ratings-data-service/ratingsdata/users/" + userID, UserRating.class)
                 .retrieve()
                 .bodyToMono(UserRating.class);
 
@@ -36,7 +38,7 @@ public class MovieCatalogResource {
 
             Mono<MovieDto> movie = webClientBuilder.build()
                     .get()
-                    .uri("http://localhost:8082/movies/" + ratingDto.getMovieID())
+                    .uri("http://movie-info-service/movies/" + ratingDto.getMovieID())
                     .retrieve()
                     .bodyToMono(MovieDto.class);
 
