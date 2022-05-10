@@ -1,1 +1,1 @@
-# Movie-Ratings-Catalog-Microservice-Application
+# Movie-Ratings-Microservice-Application
