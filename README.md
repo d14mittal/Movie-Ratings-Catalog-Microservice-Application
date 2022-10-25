@@ -1,2 +1,2 @@
 # Movie-Ratings-Microservice-Application
-# Applcication code is in maaster branch.
+# Applcication code is in master branch.
